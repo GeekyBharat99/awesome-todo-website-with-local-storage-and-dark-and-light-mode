@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Get It Done</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheets/main.css">
+        <link rel="icon" href="images/favicons/favicon-32x32.png">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div id="menu-section">
+            <input type="checkbox" id="menu">
+            <aside id="menu-controller">
+                <label for="menu" class="icon"></label>
+            </aside>
+            <div id="menu-dimmed-bg"></div>
+            <div id="menu-content">
+                <header>
+                    <h4 class="bold">Get it done</h4>
+                    <label for="menu" class="icon"></label>
+                </header>
+                
+                <section id="theme">
+                    <h5 class="bold">Theme:
+                        <span id="light" class="current-theme" onclick="updateTheme('light')">Light</span>
+                        <span id="dark" onclick="updateTheme('dark')">Dark</span>
+                    </h5>
+                </section>
+                
+                <section id="completed-tasks">
+                    <h5 class="bold">Recently Completed Tasks</h5>
+                    <ul id="completed-task-list">
+                        <li class="invert">Walk Dog: <span>Sept 12th</span></li>
+                        <li class="invert">Record Video: <span>Sept 12th</span></li>
+                        <li class="invert">Feed Cats: <span>Sept 12th</span></li>
+                        <li class="invert">Do Stuff: <span>Sept 12th</span></li>
+                    </ul>
+                </section>
+                
+                <h5 id="reset" class="bold" onclick="attemptReset();">Reset All</h5>
+            </div>
+        </div>
+        
+        <section id="main">
+            <article id="headers" class="black">
+                <header>
+                    <h1>To Do App</h1>
+                    <h2>It Helps You GET IT DONE!</h2>
+                </header>
+                <header>
+                    <div>
+                        <h3>Total Tasks</h3>
+                        <h4 id="total">2</h4>
+                    </div>
+                    <div>
+                        <h3>Completed Tasks</h3>
+                        <h4 id="completed">74</h4>
+                    </div>
+                </header>
+            </article>
+            
+            <article id="input-section" class="black">
+                <input type="text" id="task-input" placeholder="Create Task">
+                <label>Press enter to create task!</label>
+            </article>
+            
+            <ul id="task-list" class="bold">
+                <li>Do Stuff</li>
+                <li>Sleep</li>
+            </ul>
+        </section>
+        
+        <dialog id="modal">
+            <h2 class="bold">This will reset all associated data. <br>Are you sure you want to do that?</h2>
+            <button class="black" onclick="reset(); closeModal();">Yes</button>
+            <button class="black" onclick="closeModal();">No</button>
+        </dialog>
+        
+        
+        <script src="js/date_format.js" type="text/javascript"></script>
+        <script src="js/storage.js" type="text/javascript"></script>
+        <script src="js/tasks.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+    </body>
+</html>
